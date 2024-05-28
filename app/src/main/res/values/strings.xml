@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">AgroSense</string>
+    <string name="signup">Daftar</string>
+    <string name="login">Masuk</string>
+    <string name="message_welcome_page">Apakah Anda seorang petani atau pedagang hasil pertanian? AgroSense hadir untuk memudahkan Anda dalam memantau harga hasil pertanian secara real-time.</string>
+    <string name="title_welcome_page">Selamat datang di AgroSense!</string>
+    <string name="title_signup_page">Lengkapi data dirimu di bawah ini ya</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="message_login_page">Masuk untuk memantau harga pertanian real-time dan buat keputusan terbaik.</string>
+    <string name="title_login_page">Login dulu yuk!</string>
+    <string name="name">Nama</string>
+    <string name="message_main_page">Selamat Datang di AgroSense!</string>
+    <string name="greeting">Halo %1$s,</string>
+    <string name="logout">Keluar</string>
+    <string name="notHaveAcc">Belum punya akun?</string>
+    <string name="register">Daftar</string>
+    <string name="email_not_valid">Email tidak valid</string>
+    <string name="password_validation">Password tidak boleh kurang dari 8 karakter</string>
+    <string name="message_validation">Masukkan %1$s</string>
+    <string name="next">Lanjut</string>
+    <string name="login_error">Tidak dapat masuk, silakan periksa kembali!</string>
+    <string name="signup_error">Tidak dapat mendaftar, mohon periksa kembali!</string>
 </resources>
