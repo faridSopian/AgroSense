@@ -21,4 +21,9 @@
     <string name="next">Lanjut</string>
     <string name="login_error">Tidak dapat masuk, silakan periksa kembali!</string>
     <string name="signup_error">Tidak dapat mendaftar, mohon periksa kembali!</string>
+    <string name="beranda">Beranda</string>
+    <string name="history">History</string>
+    <string name="table">Table</string>
+    <string name="komoditas">Komoditas</string>
+    <string name="profile">Profile</string>
 </resources>

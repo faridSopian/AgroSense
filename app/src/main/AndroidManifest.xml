@@ -11,6 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AgroSense">
         <activity
+            android:name=".view.prediction.PredictActivity"
+            android:exported="false"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name=".view.recommendation.RecomActivity"
+            android:exported="false"
+            android:launchMode="singleTop"/>
+        <activity
             android:name=".view.welcome.WelcomeActivity"
             android:exported="false" />
         <activity
@@ -21,7 +29,8 @@
             android:exported="false" />
         <activity
             android:name=".view.main.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

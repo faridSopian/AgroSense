@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/recom"
+        android:icon="@drawable/recom"
+        android:title="Recommendation" />
+    <item
+        android:id="@+id/predict"
+        android:icon="@drawable/history"
+        android:title="Prediction" />
+<!--    <item-->
+<!--        android:id="@+id/table"-->
+<!--        android:icon="@drawable/ic_table"-->
+<!--        android:title="@string/table" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/komoditas"-->
+<!--        android:icon="@drawable/ic_komoditas"-->
+<!--        android:title="@string/komoditas" />-->
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/logout"
+        android:title="Logout" />
+</menu>

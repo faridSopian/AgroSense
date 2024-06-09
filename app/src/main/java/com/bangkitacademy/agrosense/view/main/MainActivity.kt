@@ -1,5 +1,6 @@
 package com.bangkitacademy.agrosense.view.main
 
+import android.R
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
@@ -10,10 +11,14 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.bangkitacademy.agrosense.data.remote.response.LoginResult
 import com.bangkitacademy.agrosense.databinding.ActivityMainBinding
+import com.bangkitacademy.agrosense.view.prediction.PredictActivity
+import com.bangkitacademy.agrosense.view.recommendation.RecomActivity
 import com.bangkitacademy.agrosense.view.welcome.WelcomeActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import combangkitacademy.agrosense.view.ViewModelFactory
+
 
 class MainActivity : AppCompatActivity() {
     private val viewModel by viewModels<MainViewModel> {
@@ -25,6 +30,32 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(com.bangkitacademy.agrosense.R.id.nav_view)
+
+        val selectedItemId = intent.getIntExtra("selected_item_id", com.bangkitacademy.agrosense.R.id.profile)
+        bottomNavigationView.selectedItemId = selectedItemId
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                com.bangkitacademy.agrosense.R.id.recom -> {
+                    startActivity(Intent(this, RecomActivity::class.java))
+                    intent.putExtra("selected_item_id", item.itemId)
+                    true
+                }
+                com.bangkitacademy.agrosense.R.id.predict -> {
+                    startActivity(Intent(this, PredictActivity::class.java))
+                    intent.putExtra("selected_item_id", item.itemId)
+                    true
+                }
+                com.bangkitacademy.agrosense.R.id.profile -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    intent.putExtra("selected_item_id", item.itemId)
+                    true
+                }
+                else -> false
+            }
+        }
 
         viewModel.getSession().observe(this) { user ->
             if (!user.isLogin) {
