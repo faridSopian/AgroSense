@@ -26,4 +26,12 @@
     <string name="table">Table</string>
     <string name="komoditas">Komoditas</string>
     <string name="profile">Profile</string>
+    <string name="username">Username</string>
+
+    <string-array name="plant_names">
+        <item>Wheat</item>
+        <item>Rice</item>
+        <item>Maize</item>
+        <!-- Tambahkan nama tanaman lainnya -->
+    </string-array>
 </resources>

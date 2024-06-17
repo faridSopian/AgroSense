@@ -9,7 +9,7 @@ import com.bangkitacademy.agrosense.data.pref.UserModel
 import kotlinx.coroutines.launch
 
 class LoginViewModel(private val repository: UserRepository) : ViewModel() {
-    fun login(email: String, password: String) = repository.login(email, password)
+    fun login(username: String, password: String) = repository.login(username, password)
 
     fun getSession(): LiveData<UserModel> {
         return repository.getSession().asLiveData()

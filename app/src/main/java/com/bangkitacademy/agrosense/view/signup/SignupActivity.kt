@@ -71,9 +71,6 @@ class SignupActivity : AppCompatActivity() {
                                 is Result.Success -> {
                                     showLoading(false)
                                     val user = result.data
-                                    if (user.error!!){
-                                        Toast.makeText(this@SignupActivity, user.message, Toast.LENGTH_SHORT).show()
-                                    }else{
                                         AlertDialog.Builder(this@SignupActivity).apply {
                                             setTitle("Yeah!")
                                             setMessage(user.message)
@@ -83,7 +80,6 @@ class SignupActivity : AppCompatActivity() {
                                             create()
                                             show()
                                         }
-                                    }
                                 }
                                 is Result.Error -> {
                                     showLoading(false)

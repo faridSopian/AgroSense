@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiConfig {
 
-    var BASE_URL = "https://story-api.dicoding.dev/v1/"
+    var BASE_URL = "https://agrosense-capstone.et.r.appspot.com/"
 
     fun getApiService(): ApiService {
         val loggingInterceptor =

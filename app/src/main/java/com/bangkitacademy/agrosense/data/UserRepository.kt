@@ -4,7 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.bangkitacademy.agrosense.data.pref.UserModel
 import com.bangkitacademy.agrosense.data.pref.UserPreference
+import com.bangkitacademy.agrosense.data.remote.response.LoginRequest
 import com.bangkitacademy.agrosense.data.remote.response.LoginResponse
+import com.bangkitacademy.agrosense.data.remote.response.RegisterRequest
 import com.bangkitacademy.agrosense.data.remote.response.RegisterResponse
 import kotlinx.coroutines.flow.Flow
 import com.bangkitacademy.agrosense.data.remote.result.Result
@@ -23,10 +25,10 @@ class UserRepository private constructor(
         return userPreference.getSession()
     }
 
-    fun login(email: String, password: String) : LiveData<Result<LoginResponse>> = liveData {
+    fun login(username: String, password: String) : LiveData<Result<LoginResponse>> = liveData {
         emit(Result.Loading)
         try {
-            val result = apiService.login(email, password)
+            val result = apiService.login(LoginRequest(username, password))
             emit(Result.Success(result))
         }catch (e: Exception)
         {
@@ -35,10 +37,10 @@ class UserRepository private constructor(
         }
     }
 
-    fun register(name: String, email: String, password: String) : LiveData<Result<RegisterResponse>> = liveData {
+    fun register(username: String, email: String, password: String) : LiveData<Result<RegisterResponse>> = liveData {
         emit(Result.Loading)
         try{
-            val result = apiService.register(name, email, password)
+            val result = apiService.register(RegisterRequest(username, email, password))
             emit(Result.Success(result))
         }catch (e : Exception)
         {

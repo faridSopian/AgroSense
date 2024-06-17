@@ -1,9 +1,12 @@
 package com.bangkitacademy.agrosense.data.remote.retrofit
 
 import com.bangkitacademy.agrosense.data.remote.response.Example
+import com.bangkitacademy.agrosense.data.remote.response.LoginRequest
 import com.bangkitacademy.agrosense.data.remote.response.LoginResponse
+import com.bangkitacademy.agrosense.data.remote.response.RegisterRequest
 import com.bangkitacademy.agrosense.data.remote.response.RegisterResponse
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -11,19 +14,14 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface ApiService {
-    @FormUrlEncoded
-    @POST("register")
+    @POST("api/register")
     suspend fun register(
-        @Field("name") name: String,
-        @Field("email") email: String,
-        @Field("password") password: String
+        @Body request: RegisterRequest
     ): RegisterResponse
 
-    @FormUrlEncoded
-    @POST("login")
+    @POST("api/login")
     suspend fun login(
-        @Field("email") email: String,
-        @Field("password") password: String
+        @Body request: LoginRequest
     ): LoginResponse
 
     @GET("forecast")

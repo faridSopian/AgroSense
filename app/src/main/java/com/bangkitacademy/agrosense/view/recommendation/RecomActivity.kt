@@ -12,10 +12,12 @@ import androidx.core.view.WindowInsetsCompat
 import com.bangkitacademy.agrosense.R
 import com.bangkitacademy.agrosense.data.remote.response.Example
 import com.bangkitacademy.agrosense.data.remote.retrofit.ApiService
+import com.bangkitacademy.agrosense.helper.TFLiteHelper
 import com.bangkitacademy.agrosense.view.main.MainActivity
 import com.bangkitacademy.agrosense.view.prediction.PredictActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import okio.IOException
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,6 +27,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 const val BASE_URL = "https://api.openweathermap.org/data/2.5/";
 
 class RecomActivity : AppCompatActivity() {
+
+    private lateinit var tfliteHelper: TFLiteHelper
+    private lateinit var resultTextView: TextView
+    private lateinit var plantNames: Array<String>
 
     var tv_temp: TextView? = null
     var weathercon_temp: TextView? = null
@@ -40,6 +46,8 @@ class RecomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_recom)
+
+        resultTextView = findViewById(R.id.result_tv)
 
         tv_temp = findViewById(R.id.tv_temp)
         weathercon_temp = findViewById(R.id.weathercon_temp)
@@ -73,6 +81,36 @@ class RecomActivity : AppCompatActivity() {
         }
 
         fetchWeatherData()
+
+        try {
+            tfliteHelper = TFLiteHelper(this, "model_Tangerang.tflite")
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+
+        val temperature = 29.75f
+        val humidity = 75.95f
+        val rainfall = 1734.021f
+
+        val input = floatArrayOf(temperature, humidity, rainfall)
+        val outputArray = tfliteHelper.runInference(input)
+
+        val recommendedPlantName = outputArray[0]
+
+        resultTextView.text = recommendedPlantName
+    }
+
+    private fun getPlantNameFromOutput(outputIndex: Int): String {
+        return if (outputIndex >= 0 && outputIndex < plantNames.size) {
+            plantNames[outputIndex]
+        } else {
+            "Unknown Plant"
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        tfliteHelper.close()
     }
 
     private fun fetchWeatherData() {
