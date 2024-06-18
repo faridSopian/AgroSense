@@ -24,19 +24,26 @@ class TFLiteHelper(context: Context, modelPath: String) {
         return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
     }
 
-    fun runInference(input: FloatArray): Array<String> {
+    fun runInference(input: FloatArray): String {
         val inputArray = arrayOf(input)
-        val outputArray = Array(1) { FloatArray(1) }
+        val outputArray = Array(1) { FloatArray(22) } // Sesuaikan dengan bentuk output model
         interpreter.run(inputArray, outputArray)
 
-        // Mengonversi outputArray ke dalam bentuk Array<String> nama tanaman
-        val recommendedPlantName = outputArray.map { it.toString() }.toTypedArray()
-        return recommendedPlantName
+        // Mengonversi outputArray ke dalam nama tanaman
+        val recommendedPlantIndex = outputArray[0].indices.maxByOrNull { outputArray[0][it] } ?: -1
+        return getPlantNameByIndex(recommendedPlantIndex)
+    }
+
+    private fun getPlantNameByIndex(index: Int): String {
+        // Ganti dengan nama tanaman sebenarnya sesuai dengan index output dari model
+        val plantNames = arrayOf("Padi", "Jagung", "Jute", "Kapas", "Kelapa", "Pepaya",
+            "Jeruk", "Apel", "Melon", "Semangka", "Anggur", "Mangga",
+            "Pisang", "Delima", "Kacang Lentil", "Lentil Hitam", "Kacang Hijau", "Matki",
+            "Kacang Gude", "Kacang Merah", "Kacang Arab", "Kopi")
+        return if (index in plantNames.indices) plantNames[index] else "Unknown Plant"
     }
 
     fun close() {
         interpreter.close()
     }
 }
-
-

@@ -37,6 +37,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        mlModelBinding = true
     }
 }
 
@@ -68,6 +69,6 @@ dependencies {
 
     implementation("org.tensorflow:tensorflow-lite:2.3.0")
 
-
+    implementation("com.google.android.gms:play-services-location:21.0.1")
     implementation("com.github.bumptech.glide:glide:4.16.0")
 }

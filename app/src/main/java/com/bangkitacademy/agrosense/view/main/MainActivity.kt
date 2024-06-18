@@ -12,7 +12,6 @@ import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bangkitacademy.agrosense.databinding.ActivityMainBinding
-import com.bangkitacademy.agrosense.view.prediction.PredictActivity
 import com.bangkitacademy.agrosense.view.recommendation.RecomActivity
 import com.bangkitacademy.agrosense.view.welcome.WelcomeActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -40,11 +39,6 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 com.bangkitacademy.agrosense.R.id.recom -> {
                     startActivity(Intent(this, RecomActivity::class.java))
-                    intent.putExtra("selected_item_id", item.itemId)
-                    true
-                }
-                com.bangkitacademy.agrosense.R.id.predict -> {
-                    startActivity(Intent(this, PredictActivity::class.java))
                     intent.putExtra("selected_item_id", item.itemId)
                     true
                 }
