@@ -103,7 +103,7 @@ class RecomActivity : AppCompatActivity() {
 
         resultTextView.text = recommendedPlantName
 
-        // otomatis using gps
+        // otomatis using gps : hanya bekerja jika lokasi diawali kata "Kecamatan". contoh Kecamatan Pamulang, yang diambil Pamulang nya aja karna APInya cuma bisa nerima input kota dalam satu kata
         // checkLocationPermission()
     }
 
