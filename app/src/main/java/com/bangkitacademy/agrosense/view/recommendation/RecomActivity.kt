@@ -89,7 +89,7 @@ class RecomActivity : AppCompatActivity() {
             }
         }
 
-//        checkLocationPermission()
+        // Manual
         fetchWeatherData("Lebak")
 
         val temperature = 26f
@@ -102,6 +102,9 @@ class RecomActivity : AppCompatActivity() {
         val recommendedPlantName = outputArray
 
         resultTextView.text = recommendedPlantName
+
+        // otomatis using gps
+        // checkLocationPermission()
     }
 
     private fun checkLocationPermission() {
