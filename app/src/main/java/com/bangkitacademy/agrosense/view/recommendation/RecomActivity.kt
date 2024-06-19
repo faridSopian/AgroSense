@@ -89,7 +89,19 @@ class RecomActivity : AppCompatActivity() {
             }
         }
 
-        checkLocationPermission()
+//        checkLocationPermission()
+        fetchWeatherData("Lebak")
+
+        val temperature = 26f
+        val humidity = 66f
+        val rainfall = 20f
+
+        val input = floatArrayOf(temperature, humidity, rainfall)
+        val outputArray = tfliteHelper.runInference(input)
+
+        val recommendedPlantName = outputArray
+
+        resultTextView.text = recommendedPlantName
     }
 
     private fun checkLocationPermission() {
@@ -158,12 +170,12 @@ class RecomActivity : AppCompatActivity() {
                 latest1!!.text = responseBody.list[0].dt_txt.substring(0, 10)
 
                 // Dapatkan nilai temperature, humidity, dan rainfall
-                temperature = responseBody.list[0].main.temp.toFloat()
-                humidity = responseBody.list[0].main.humidity.toFloat()
-                rainfall = responseBody.list[0].rain.`3h`.toFloat()
+//                temperature = responseBody.list[0].main.temp.toFloat()
+//                humidity = responseBody.list[0].main.humidity.toFloat()
+//                rainfall = responseBody.list[0].rain.`3h`.toFloat()
 
                 // Jalankan inferensi setelah mendapatkan data cuaca
-                runInference()
+//                runInference()
 
                 // Dapatkan kode icon dari respons API
                 val iconCode = responseBody.list[0].weather[0].icon
