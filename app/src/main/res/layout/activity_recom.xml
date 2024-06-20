@@ -62,11 +62,25 @@
             android:id="@+id/img_temp"
             android:src="@mipmap/ic_launcher" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rekomendasi Terbaru"
+            android:padding="5sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="40sp"
+            android:layout_marginBottom="0sp"
+            android:background="#16DC00" />
+
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30sp"
-            app:cardBackgroundColor="#0ED2F7"
+            android:layout_marginLeft="30sp"
+            android:layout_marginRight="30sp"
+            android:layout_marginBottom="30sp"
+            app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="10dp"
             app:cardElevation="10dp">
 
@@ -99,7 +113,7 @@
                         android:layout_weight="3"
                         android:fontFamily="casual"
                         android:text="Pigeonpeas"
-                        android:textColor="#fff"
+                        android:textColor="#284C00"
                         android:textSize="20dp" />
 
 
@@ -108,9 +122,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:layout_weight="2"
-
                         android:text="22/14"
-                        android:textColor="#fff"
+                        android:textColor="#636363"
                         android:textSize="16dp"
                         android:id="@+id/latest1"/>
 
