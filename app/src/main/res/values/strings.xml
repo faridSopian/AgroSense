@@ -2,12 +2,12 @@
     <string name="app_name">AgroSense</string>
     <string name="signup">Daftar</string>
     <string name="login">Masuk</string>
-    <string name="message_welcome_page">Apakah Anda seorang petani atau pedagang hasil pertanian? AgroSense hadir untuk memudahkan Anda dalam memantau harga hasil pertanian secara real-time.</string>
+    <string name="message_welcome_page">Apakah Anda seorang petani atau pedagang hasil pertanian? AgroSense hadir untuk memudahkan Anda dalam memprediksi tanaman pertanian secara real-time.</string>
     <string name="title_welcome_page">Selamat datang di AgroSense!</string>
     <string name="title_signup_page">Lengkapi data dirimu di bawah ini ya</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="message_login_page">Masuk untuk memantau harga pertanian real-time dan buat keputusan terbaik.</string>
+    <string name="message_login_page">Masuk untuk prediksi tanaman real-time dan buat keputusan terbaik.</string>
     <string name="title_login_page">Login dulu yuk!</string>
     <string name="name">Nama</string>
     <string name="message_main_page">Selamat Datang di AgroSense!</string>

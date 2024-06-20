@@ -14,18 +14,18 @@
         android:layout_height="0dp"
         android:layout_marginTop="20sp"
         android:layout_weight="1"
-        android:orientation="vertical"
         android:background="@drawable/recom_bg"
+        android:orientation="vertical"
         android:padding="20sp">
 
         <TextView
+            android:id="@+id/tv_citytemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="Country Name"
             android:textColor="#fff"
-            android:textSize="25dp"
-            android:id="@+id/tv_citytemp"/>
+            android:textSize="25dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,45 +33,45 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="casual"
                 android:text="22"
                 android:textColor="#fff"
-                android:textSize="50dp"
-                android:id="@+id/tv_temp"/>
+                android:textSize="50dp" />
 
             <TextView
+                android:id="@+id/weathercon_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:fontFamily="casual"
                 android:text="Sunny 22/14"
                 android:textColor="#fff"
-                android:textSize="20dp"
-                android:id="@+id/weathercon_temp"/>
+                android:textSize="20dp" />
 
 
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/img_temp"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_marginTop="20sp"
-            android:id="@+id/img_temp"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rekomendasi Terbaru"
-            android:padding="5sp"
-            android:textColor="@color/white"
-            android:layout_marginTop="20sp"
             android:layout_marginLeft="40sp"
+            android:layout_marginTop="20sp"
             android:layout_marginBottom="0sp"
-            android:background="#16DC00" />
+            android:background="#16DC00"
+            android:padding="5sp"
+            android:text="Rekomendasi Terbaru"
+            android:textColor="@color/white" />
 
 
         <androidx.cardview.widget.CardView
@@ -99,11 +99,11 @@
                     android:orientation="horizontal"
                     android:weightSum="5">
 
-<!--                    <ImageView-->
-<!--                        android:layout_width="20sp"-->
-<!--                        android:layout_height="20sp"-->
-<!--                        android:layout_weight="0.5"-->
-<!--                        android:src="@drawable/pigeonpeas" />-->
+                    <!--                    <ImageView-->
+                    <!--                        android:layout_width="20sp"-->
+                    <!--                        android:layout_height="20sp"-->
+                    <!--                        android:layout_weight="0.5"-->
+                    <!--                        android:src="@drawable/pigeonpeas" />-->
 
                     <TextView
                         android:id="@+id/result_tv"
@@ -118,96 +118,96 @@
 
 
                     <TextView
+                        android:id="@+id/latest1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:layout_weight="2"
                         android:text="22/14"
                         android:textColor="#636363"
-                        android:textSize="16dp"
-                        android:id="@+id/latest1"/>
+                        android:textSize="16dp" />
 
 
                 </LinearLayout>
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_margin="5dp"-->
-<!--                    android:gravity="center"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:weightSum="5">-->
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_margin="5dp"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:orientation="horizontal"-->
+                <!--                    android:weightSum="5">-->
 
-<!--                    <ImageView-->
-<!--                        android:layout_width="20sp"-->
-<!--                        android:layout_height="20sp"-->
-<!--                        android:layout_weight="0.5"-->
-<!--                        android:src="@drawable/pigeonpeas" />-->
+                <!--                    <ImageView-->
+                <!--                        android:layout_width="20sp"-->
+                <!--                        android:layout_height="20sp"-->
+                <!--                        android:layout_weight="0.5"-->
+                <!--                        android:src="@drawable/pigeonpeas" />-->
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/result_tv2"-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginLeft="15dp"-->
-<!--                        android:layout_weight="3"-->
-<!--                        android:fontFamily="casual"-->
-<!--                        android:text="Pigeonpeas"-->
-<!--                        android:textColor="#fff"-->
-<!--                        android:textSize="20dp" />-->
-
-
-<!--                    <TextView-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginLeft="15dp"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:fontFamily="casual"-->
-<!--                        android:text="22/14"-->
-<!--                        android:textColor="#fff"-->
-<!--                        android:textSize="8dp"-->
-<!--                        android:id="@+id/latest2"/>-->
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/result_tv2"-->
+                <!--                        android:layout_width="0dp"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginLeft="15dp"-->
+                <!--                        android:layout_weight="3"-->
+                <!--                        android:fontFamily="casual"-->
+                <!--                        android:text="Pigeonpeas"-->
+                <!--                        android:textColor="#fff"-->
+                <!--                        android:textSize="20dp" />-->
 
 
-<!--                </LinearLayout>-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_margin="5dp"-->
-<!--                    android:gravity="center"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:weightSum="5">-->
-
-<!--                    <ImageView-->
-<!--                        android:layout_width="20sp"-->
-<!--                        android:layout_height="20sp"-->
-<!--                        android:layout_weight="0.5"-->
-<!--                        android:src="@drawable/pigeonpeas" />-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginLeft="15dp"-->
-<!--                        android:layout_weight="3"-->
-<!--                        android:fontFamily="casual"-->
-<!--                        android:text="Pigeonpeas"-->
-<!--                        android:textColor="#fff"-->
-<!--                        android:textSize="20dp" />-->
+                <!--                    <TextView-->
+                <!--                        android:layout_width="0dp"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginLeft="15dp"-->
+                <!--                        android:layout_weight="1"-->
+                <!--                        android:fontFamily="casual"-->
+                <!--                        android:text="22/14"-->
+                <!--                        android:textColor="#fff"-->
+                <!--                        android:textSize="8dp"-->
+                <!--                        android:id="@+id/latest2"/>-->
 
 
-<!--                    <TextView-->
-<!--                        android:layout_width="0dp"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginLeft="15dp"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:fontFamily="casual"-->
-<!--                        android:text="22/14"-->
-<!--                        android:textColor="#fff"-->
-<!--                        android:textSize="8dp"-->
-<!--                        android:id="@+id/latest3"/>-->
+                <!--                </LinearLayout>-->
+
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_margin="5dp"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:orientation="horizontal"-->
+                <!--                    android:weightSum="5">-->
+
+                <!--                    <ImageView-->
+                <!--                        android:layout_width="20sp"-->
+                <!--                        android:layout_height="20sp"-->
+                <!--                        android:layout_weight="0.5"-->
+                <!--                        android:src="@drawable/pigeonpeas" />-->
+
+                <!--                    <TextView-->
+                <!--                        android:layout_width="0dp"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginLeft="15dp"-->
+                <!--                        android:layout_weight="3"-->
+                <!--                        android:fontFamily="casual"-->
+                <!--                        android:text="Pigeonpeas"-->
+                <!--                        android:textColor="#fff"-->
+                <!--                        android:textSize="20dp" />-->
 
 
-<!--                </LinearLayout>-->
+                <!--                    <TextView-->
+                <!--                        android:layout_width="0dp"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginLeft="15dp"-->
+                <!--                        android:layout_weight="1"-->
+                <!--                        android:fontFamily="casual"-->
+                <!--                        android:text="22/14"-->
+                <!--                        android:textColor="#fff"-->
+                <!--                        android:textSize="8dp"-->
+                <!--                        android:id="@+id/latest3"/>-->
+
+
+                <!--                </LinearLayout>-->
 
             </LinearLayout>
 

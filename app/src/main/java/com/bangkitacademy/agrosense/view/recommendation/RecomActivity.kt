@@ -92,9 +92,9 @@ class RecomActivity : AppCompatActivity() {
         // Manual
         fetchWeatherData("Lebak")
 
-        val temperature = 26f
-        val humidity = 66f
-        val rainfall = 20f
+        val temperature = 28.7f
+        val humidity = 83f
+        val rainfall = 2.8f
 
         val input = floatArrayOf(temperature, humidity, rainfall)
         val outputArray = tfliteHelper.runInference(input)
@@ -138,7 +138,9 @@ class RecomActivity : AppCompatActivity() {
                     val geocoder = Geocoder(this, Locale.getDefault())
                     val addresses = geocoder.getFromLocation(location.latitude, location.longitude, 1)
                     if (addresses != null && addresses.isNotEmpty()) {
-                        val cityName = addresses[0].locality.substring(10, 18) ?: "Unknown"
+                        var cityName = addresses[0].locality
+                        Log.d("RecomActivity", "City Name: $cityName")
+                        cityName = addresses[0].locality.substring(10, 18)
                         Log.d("RecomActivity", "City Name: $cityName")
                         fetchWeatherData(cityName)
                     } else {
